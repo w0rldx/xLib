@@ -33,17 +33,19 @@ public static class ApplicationDbContextSeed
             LinkItem link8 = new LinkItem { Label = "Enable 2FA", Link = "/" };
             LinkItem link9 = new LinkItem { Label = "Change password", Link = "/" };
             LinkItem link10 = new LinkItem { Label = "Recovery codes", Link = "/" };
+            LinkItem link11 = new LinkItem { Label = "Dashboard", Link = "/finances" };
 
             context.LinkItems.AddRange(link1, link2, link3, link4, link5, link6, link7, link8, link9, link10);
 
             context.NavigationItems.AddRange(
                 new NavigationItem { Label = "Dashboard", Icon = "ai/AiOutlineDashboard" },
-                new NavigationItem { Label = "Market news", Icon = "AiOutlineProject", InitiallyOpened = true, Links = new List<LinkItem> { link1, link2, link3, link4 } },
+                new NavigationItem { Label = "Market news", Icon = "ai/AiOutlineProject", InitiallyOpened = true, Links = new List<LinkItem> { link1, link2, link3, link4 } },
                 new NavigationItem { Label = "Releases", Icon = "ai/AiOutlineCalendar", Links = new List<LinkItem> { link5, link6, link7 } },
                 new NavigationItem { Label = "Analytics", Icon = "ai/AiOutlineFundProjectionScreen" },
                 new NavigationItem { Label = "Contracts", Icon = "ai/AiOutlineFile" },
                 new NavigationItem { Label = "Settings", Icon = "ai/AiOutlineSetting" },
-                new NavigationItem { Label = "Security", Icon = "ai/AiOutlineLock", Links = new List<LinkItem> { link8, link9, link10 } }
+                new NavigationItem { Label = "Security", Icon = "ai/AiOutlineLock", Links = new List<LinkItem> { link8, link9, link10 } },
+                new NavigationItem { Label = "Finances", Icon = "fa/FaRegShareSquare", Links = new List<LinkItem> {link11}}
                 );
 
             await context.SaveChangesAsync();
