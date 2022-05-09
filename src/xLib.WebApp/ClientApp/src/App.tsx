@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { Route, Routes } from 'react-router-dom';
 import SiteLayout from './components/SiteLayout';
+import Finances from './pages/Finances';
 import Home from './pages/Home';
 import './scss/Index.scss';
 
@@ -25,6 +26,7 @@ function App() {
                         <SiteLayout>
                             <Routes>
                                 <Route path="/" element={<Home />} />
+                                <Route path="/finances" element={<Finances />} />
                             </Routes>
                             <ReactQueryDevtools initialIsOpen={false} />
                         </SiteLayout>

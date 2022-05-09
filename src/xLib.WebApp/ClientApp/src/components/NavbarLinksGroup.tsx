@@ -1,6 +1,7 @@
 import { Box, Collapse, createStyles, Group, Text, ThemeIcon, UnstyledButton } from '@mantine/core';
 import React, { useState } from 'react';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 import DynamicIcon from './DynamicIcon';
 
 const useStyles = createStyles((theme) => ({
@@ -57,14 +58,8 @@ export function LinksGroup({ icon: Icon, label, initiallyOpened, links }: LinksG
     const [opened, setOpened] = useState(initiallyOpened || false);
     const ChevronIcon = theme.dir === 'ltr' ? BsChevronRight : BsChevronLeft;
     const items = (hasLinks ? links : []).map((link) => (
-        <Text<'a'>
-            component="a"
-            className={classes.link}
-            href={link.link}
-            key={link.label}
-            onClick={(event) => event.preventDefault()}
-        >
-            {link.label}
+        <Text className={classes.link} key={link.label}>
+            <Link to={link.link}>{link.label}</Link>
         </Text>
     ));
 
