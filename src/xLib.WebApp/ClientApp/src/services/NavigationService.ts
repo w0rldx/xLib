@@ -5,6 +5,7 @@ const apiClient = axios.create({
     headers: {
         'Content-type': 'application/json',
     },
+    timeout: 1,
 });
 
 const get = async () => {
