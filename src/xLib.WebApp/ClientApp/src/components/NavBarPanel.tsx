@@ -11,16 +11,22 @@ interface NavBarPanelProps {
     width: number;
 }
 
-interface NavBarItems {
+interface NavigationItem {
     label: string;
     icon: string;
-    initiallyOpened: boolean;
+    initiallyOpened?: boolean;
     index: number;
-    links: [{ label: string; link: string }];
+    link: string;
+    links: NavBarLinkItem[];
+}
+
+interface NavBarLinkItem {
+    label: string;
+    link: string;
 }
 
 export function NavBarPanel(props: NavBarPanelProps) {
-    const { data } = useQuery<NavBarItems[], Error>(['navbar'], NavigationService.get);
+    const { data } = useQuery<NavigationItem[]>(['navbarItems'], NavigationService.getNavigation);
     const { classes } = useStyles();
 
     data?.sort(function (a, b) {
@@ -33,6 +39,7 @@ export function NavBarPanel(props: NavBarPanelProps) {
                 key={item.label}
                 icon={item.icon}
                 label={item.label}
+                link={item.link ? item.link : ''}
                 links={!item.links.length ? undefined : item.links}
             />
         );
