@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { Route, Routes } from 'react-router-dom';
 import SiteLayout from './components/SiteLayout';
+import DateCalculator from './pages/DateCalculator';
 import Home from './pages/Home';
 import NoPage from './pages/NoPage';
 import RockPaperScissors from './pages/RockPaperScissors';
@@ -27,12 +28,12 @@ function App() {
                         <Routes>
                             <Route path="/" element={<SiteLayout />}>
                                 <Route index element={<Home />} />
+                                <Route path="rockpaperscissors" element={<RockPaperScissors />} />
+                                <Route path="datecalculator" element={<DateCalculator />} />
                                 <Route path="*" element={<NoPage />} />
-                                <Route path="/rockpaperscissors" element={<RockPaperScissors />} />
                             </Route>
                         </Routes>
                         <ReactQueryDevtools initialIsOpen={false} />
-                        <Route path="/rockpaperscissors" element={<RockPaperScissors />} />
                     </MantineProvider>
                 </ColorSchemeProvider>
             </QueryClientProvider>
