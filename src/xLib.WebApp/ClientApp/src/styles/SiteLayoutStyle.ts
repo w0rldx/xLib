@@ -1,4 +1,4 @@
-import { createStyles } from '@mantine/core';
+import { createStyles } from '@mantine/styles';
 
 // Currently not working gridTemplateAreas is not working with getRef().... need more research why
 const useStyles = createStyles((theme, _params, getRef) => ({

@@ -4,10 +4,12 @@
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
         "airbnb-typescript",
         "react-app",
         "plugin:jsx-a11y/recommended",
         "plugin:import/recommended",
+        "plugin:import/electron",
         "plugin:import/typescript",
         "plugin:prettier/recommended"
     ],
@@ -37,11 +39,10 @@
     },
     "env": {
         "browser": true,
-        "amd": true,
+        "es6": true,
         "node": true
     },
     "rules": {
-        "prettier/prettier": "error",
         "react/react-in-jsx-scope": "off",
         "jsx-a11y/accessible-emoji": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
