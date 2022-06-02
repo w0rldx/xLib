@@ -107,5 +107,19 @@ export function getNavigationData(): NavigationItem[] {
             links: [],
             index: 6,
         },
+        {
+            label: 'Rock Paper Scissors',
+            icon: 'fa/FaRegHandRock',
+            link: 'rockpaperscissors',
+            links: [],
+            index: 7,
+        },
+        {
+            label: 'Easter Date Calculator',
+            icon: 'bs/BsCalendarDate',
+            link: 'easterdatecalculator',
+            links: [],
+            index: 8,
+        },
     ];
 }

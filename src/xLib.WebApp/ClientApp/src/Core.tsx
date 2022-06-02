@@ -4,8 +4,10 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { Route, Routes } from 'react-router-dom';
 import SiteLayout from './components/SiteLayout';
+import DateCalculator from './pages/DateCalculator';
 import Home from './pages/Home';
 import NoPage from './pages/NoPage';
+import RockPaperScissors from './pages/RockPaperScissors';
 import './scss/Index.scss';
 
 const queryClient = new QueryClient();
@@ -26,6 +28,8 @@ function Core() {
                         <Routes>
                             <Route path="/" element={<SiteLayout />}>
                                 <Route index element={<Home />} />
+                                <Route path="rockpaperscissors" element={<RockPaperScissors />} />
+                                <Route path="easterdatecalculator" element={<DateCalculator />} />
                                 <Route path="*" element={<NoPage />} />
                             </Route>
                         </Routes>
